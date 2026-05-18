@@ -1,0 +1,55 @@
+﻿@page "/sales"
+
+@rendermode InteractiveServer
+
+@using Blazor26.Models.Models
+@using Syncfusion.Blazor.Charts
+@inject IUnitOfWork _unitOfWork
+
+<div class="row mt-4">
+    <div class="col-6">
+        <h4 class="card-title text-info">Sales Chart</h4>
+    </div>
+</div>
+
+<div class="col-12 p-3">
+    @if (listOfSales.Any())
+    {
+        <SfChart Title="Sales Data">
+            <ChartPrimaryXAxis ValueType="Syncfusion.Blazor.Charts.ValueType.Category"></ChartPrimaryXAxis>
+
+            <ChartSeriesCollection>
+                <ChartSeries DataSource="@listOfSales" XName="MonthName" YName="SalesAmount" Type="ChartSeriesType.Column"></ChartSeries>
+            </ChartSeriesCollection>
+        </SfChart>
+    }
+    else
+    {
+        if (isLoading)
+        {
+            <div class="text-center">
+                <img src="Images/Loading.gif" alt="loading" />
+            </div>
+        }
+        else
+        {
+            <p class="text-danger">No Sales data found</p>
+        }
+    }
+</div>
+
+@code {
+    private IEnumerable<Sales> listOfSales { get; set; } = [];
+    private bool isLoading { get; set; } = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await Task.Run(LoadSales);
+    }
+
+    private void LoadSales()
+    {
+        listOfSales = _unitOfWork.SalesRepo.GetAll();
+        isLoading = false;
+    }
+}
