@@ -7,13 +7,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Syncfusion.Blazor.Themes" Version="33.1.44" />
     <ProjectReference Include="..\..\Blazor26.DataAccess\Blazor26.DataAccess.csproj" />
     <ProjectReference Include="..\..\Blazor26.Services\Blazor26.Services.csproj" />
     <ProjectReference Include="..\BlazorApp2026.Client\BlazorApp2026.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.18" />
     <PackageReference Include="Microsoft.AspNetCore.Hosting.WindowsServices" Version="8.0.25" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.14" />
     <PackageReference Include="Syncfusion.Blazor.Calendars" Version="33.1.44" />
     <PackageReference Include="Syncfusion.Blazor.RichTextEditor" Version="33.1.44" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\products\" />
   </ItemGroup>
 
 </Project>
