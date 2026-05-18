@@ -1,6 +1,0 @@
-C:\Users\Edwina.Sweeney\Downloads\Blazor26\Blazor26\BlazorApp2026\BlazorApp2026.Client\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Edwina.Sweeney\OneDrive - Atlantic TU\Asp.net 2024\Blazor26\BlazorApp2026\BlazorApp2026.Client\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Edwina.Sweeney\OneDrive - Atlantic TU\Asp.net 2024\Blazor26\BlazorApp2026\BlazorApp2026.Client\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Edwina.Sweeney\OneDrive - Atlantic TU\Asp.net 2024\Blazor26\BlazorApp2026\BlazorApp2026.Client\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Edwina.Sweeney\blazor-github\Blazor26\BlazorApp2026\BlazorApp2026.Client\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\Edwina.Sweeney\OneDrive - Atlantic TU\BDA 2024\Git & Git Actions\Blazor26\BlazorApp2026\BlazorApp2026.Client\obj\Debug\net8.0\staticwebassets.build.json
