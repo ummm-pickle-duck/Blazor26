@@ -1,4 +1,6 @@
 ﻿@page "/products"
+@rendermode InteractiveServer
+
 @using Blazor26.Models.Models
 @inject IUnitOfWork _unitOfWork
 
@@ -17,33 +19,24 @@
 <div class="col-12 p-3">
     @if (listOfProducts.Any())
     {
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach(var prod in listOfProducts)
-                {
-                    <tr>
-                        <td>
-                            @prod.Name
-                        </td>
-                        <td>
-                            <NavLink href="@($"products/edit/{prod.ID}")" class="btn btn-primary">Edit</NavLink>
-
-                        </td>
-                        <td>
-                            <NavLink href="@($"products/delete/{prod.ID}")" class="btn btn-primary">Delete</NavLink>
-                        </td>
-
-                      
-                    </tr>
-                }
-            </tbody>
-        </table>
+        <SfGrid DataSource="@listOfProducts">
+            <GridColumns>
+                <GridColumn Field=@nameof(Product.ID) HeaderText="Product ID"></GridColumn>
+                <GridColumn Field=@nameof(Product.Name) HeaderText="Name"></GridColumn>
+                <GridColumn Field=@nameof(Product.Price) HeaderText="Price" Format="C2"></GridColumn>
+                <GridColumn Field=@nameof(Product.CategoryID) HeaderText="Category ID"></GridColumn>
+                <GridColumn HeaderText="Actions">
+                    <Template>
+                        <NavLink href="@($"/products/edit/{(context as Product)!.ID}")" class="btn btn-primary btn-sm me-2">
+                            Edit
+                        </NavLink>
+                        <NavLink href="@($"/products/delete/{(context as Product)!.ID}")" class="btn btn-danger btn-sm">
+                            Delete
+                        </NavLink>
+                    </Template>
+                </GridColumn>
+            </GridColumns>
+        </SfGrid>
     }
     else
     {
